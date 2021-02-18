@@ -666,11 +666,11 @@ def getAdobeCatalogInfo(mountpoint, pkgname=""):
     # Look for Install.app (Bare metal CS5 install)
     # we don't handle this type, but we'll report it
     # back so makepkginfo can provide an error message
-    installapp = find_install_app(mountpoint)
-    if installapp:
-        cataloginfo = {}
-        cataloginfo['installer_type'] = "AdobeCS5Installer"
-        return cataloginfo
+    # installapp = find_install_app(mountpoint)
+    # if installapp:
+    #     cataloginfo = {}
+    #     cataloginfo['installer_type'] = "AdobeCS5Installer"
+    #     return cataloginfo
 
     # Look for AdobePatchInstaller.app (CS5 updater)
     installapp = find_adobepatchinstaller_app(mountpoint)
