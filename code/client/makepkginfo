@@ -119,21 +119,21 @@ def main():
         print(err, file=sys.stderr)
         exit(-1)
 
-    if (len(arguments) == 1 and
-            not has_valid_install_critieria(pkginfo)):
-        item = pkginfo['name']
-        msg = (
-            "WARNING: pkginfo for '%s' contains no installation check info!\n"
-            "    No useful receipts were detected, and no 'installs' "
-            "items were provided.\n"
-            "    If you do not add an 'installs' item or "
-            "an installcheck_script,\n"
-            "    Munki will have no way to determine the item's installation "
-            "state.\n"
-            "    This can result in repeated installation attempts or failure "
-            "to attempt\n"
-            "    installation at all.")
-        print(msg % item, file=sys.stderr)
+    # if (len(arguments) == 1 and
+    #         not has_valid_install_critieria(pkginfo)):
+    #     item = pkginfo['name']
+    #     msg = (
+    #         "WARNING: pkginfo for '%s' contains no installation check info!\n"
+    #         "    No useful receipts were detected, and no 'installs' "
+    #         "items were provided.\n"
+    #         "    If you do not add an 'installs' item or "
+    #         "an installcheck_script,\n"
+    #         "    Munki will have no way to determine the item's installation "
+    #         "state.\n"
+    #         "    This can result in repeated installation attempts or failure "
+    #         "to attempt\n"
+    #         "    installation at all.")
+    #     print(msg % item, file=sys.stderr)
 
     # and now, what we've all been waiting for...
     print(FoundationPlist.writePlistToString(pkginfo).decode('UTF-8'))
