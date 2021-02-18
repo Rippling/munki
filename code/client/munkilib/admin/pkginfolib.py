@@ -424,14 +424,14 @@ def makepkginfo(installeritem, options):
                       "image." % installeritem, file=sys.stderr)
                 itemhash = "N/A"
             pkginfo = get_catalog_info_from_dmg(installeritem, options)
-            if (pkginfo and
-                    pkginfo.get('installer_type') == "AdobeCS5Installer"):
-                raise PkgInfoGenerationError(
-                    "This disk image appears to contain an Adobe CS5/CS6 "
-                    "product install.\n"
-                    "Please use Adobe Application Manager, Enterprise "
-                    "Edition (AAMEE) to create an installation package "
-                    "for this product.")
+            # if (pkginfo and
+            #         pkginfo.get('installer_type') == "AdobeCS5Installer"):
+            #     raise PkgInfoGenerationError(
+            #         "This disk image appears to contain an Adobe CS5/CS6 "
+            #         "product install.\n"
+            #         "Please use Adobe Application Manager, Enterprise "
+            #         "Edition (AAMEE) to create an installation package "
+            #         "for this product.")
             if not pkginfo:
                 raise PkgInfoGenerationError(
                     "Could not find a supported installer item in %s!"
