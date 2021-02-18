@@ -119,7 +119,7 @@ def main():
         print(err, file=sys.stderr)
         exit(-1)
 
-    print(pkginfo)
+    # print(pkginfo)
     if (len(arguments) == 1 and
             not has_valid_install_critieria(pkginfo)):
         item = pkginfo['name']
